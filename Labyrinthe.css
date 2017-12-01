@@ -14,7 +14,7 @@ h1{
 	font-family: 'Iceland';
 	text-transform: uppercase;
 	  text-align:center;
-	  font-size:70px;
+	  font-size:100px;
 	  margin:20px 0 20px 0;
 	  color:#fff;
 
@@ -76,7 +76,15 @@ h1{
 	position: absolute;
 	top: 20%; left: 27%;
 
+-webkit-animation: cssAnimation 10.5533s 16 linear;
+
 }
+@-webkit-keyframes cssAnimation {
+from { -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px); }
+to { -webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}
+
+
 
 #arrive{
 	background-color: #FF0000;
