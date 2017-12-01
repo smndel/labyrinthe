@@ -1,5 +1,7 @@
 
-html { overflow-y: hidden; } 
+html { overflow-y: hidden;
+	   overflow-x: hidden;
+ } 
 
 
 body {
@@ -9,7 +11,7 @@ body {
 	width: 100%;
 }
 
-h1{
+h1 {
 	display : block;
 	text-transform: uppercase;
 	color: #FF1177;
@@ -20,8 +22,7 @@ h1{
 	left : 22%;
 }
 
-
-#gagne{
+#gagne {
 	font-family: 'Iceland';
 	text-transform: uppercase;
 	text-align:center;
@@ -33,47 +34,41 @@ h1{
 	top : 50%;
 	display : none;
 
-
 	  /*Animation*/
 	  animation: neonAnimation 1.5s ease-in-out infinite alternate;   
 }
 
-      @keyframes neonAnimation {
+@keyframes neonAnimation {
 
-        from {
-          text-shadow: 0 0 10px #ffffff,
-                     0 0 20px  #ffffff,
-                     0 0 30px  #ffffff,
-                     0 0 40px  #228DFF,
-                     0 0 70px  #228DFF,
-                     0 0 80px  #228DFF,
-                     0 0 100px #228DFF,
-                     0 0 150px #228DFF;
-        }
-        to {
-          text-shadow: 0 0 5px #ffffff,
-                0 0 10px #ffffff,
-                0 0 15px #ffffff,
-                0 0 20px #228DFF,
-                0 0 35px #228DFF,
-                0 0 40px #228DFF,
-                0 0 50px #228DFF,
-                0 0 75px #228DFF;
-  		}
-
+	from {
+	  text-shadow: 0 0 10px #ffffff,
+	             0 0 20px  #ffffff,
+	             0 0 30px  #ffffff,
+	             0 0 40px  #228DFF,
+	             0 0 70px  #228DFF,
+	             0 0 80px  #228DFF,
+	             0 0 100px #228DFF,
+	             0 0 150px #228DFF;
 	}
-
-
+	to {
+	  text-shadow: 0 0 5px #ffffff,
+	        0 0 10px #ffffff,
+	        0 0 15px #ffffff,
+	        0 0 20px #228DFF,
+	        0 0 35px #228DFF,
+	        0 0 40px #228DFF,
+	        0 0 50px #228DFF,
+	        0 0 75px #228DFF;
+	}
+}
 
 #casepleine {
 	background-color: transparent;
- 
 }
-
 
 #casevide{
 	background-color: #fff;
-
+	/*transition : background-color 200ms linear;*/
 }
 
 .case {
@@ -81,6 +76,7 @@ h1{
 	text-align: center;
 	margin: 0;
   	padding: 0;
+
 }
 
 #labyrinthe{
@@ -90,14 +86,6 @@ h1{
 	top: 30%; left: 26%;
 	transition: all 1s ease-in-out;
 }
-
-
-/*@-webkit-keyframes cssAnimation {
-from { -webkit-transform: rotate(90deg) scale(1) skew(1deg) translate(10px); }
-to { -webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
-}*/
-
-
 
 #arrive{
 	background-color: #228DFF;
@@ -109,9 +97,4 @@ to { -webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
 
 #Thésée{
 	background-color: #00FF
-}
-
-
-	 
-
 }

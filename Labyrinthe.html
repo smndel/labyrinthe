@@ -157,16 +157,18 @@
 			// tablaby.style.height = ((labyrinthe[1].length)*mesure)+ "px";
 	}
 
+
+	let rotation = 0;
+
 	function deplacement(e){
 
-
 		let deplacement = e.keyCode;
-	
+		let laby = document.getElementById("labyrinthe");
+		
+		
 
 		switch (deplacement){
 			
-			
-
 			case 37 : //left
 				if (labyrinthe[y][x-1] == 0){
 
@@ -181,9 +183,9 @@
 			
 				}else{	
 						labyrinthe[y][x]= "Thésée";
-						let laby = document.getElementById("labyrinthe");
-						laby.style.transform = 'rotate('+90+'deg)';
-	
+						
+						rotation = rotation + 90;
+						laby.style.transform = 'rotate('+(rotation)+'deg)';
 				}
 
 			break;
@@ -203,8 +205,9 @@
 						document.getElementById("gagne").style.display = "block";
 				}else{	
 						labyrinthe[y][x] = "Thésée";
-						let laby = document.getElementById("labyrinthe");
-						laby.style.transform = 'rotate('+90+'deg)';
+						
+						rotation = rotation + 90;
+						laby.style.transform = 'rotate('+(rotation)+'deg)';
 
 				}
 			break;
@@ -224,10 +227,10 @@
 				
 				}else{
 						labyrinthe[y][x]= "Thésée";
-						let laby = document.getElementById("labyrinthe");
-						laby.style.transform = 'rotate('+90+'deg)';
+						
+						rotation = rotation + 90;
+						laby.style.transform = 'rotate('+(rotation)+'deg)';
 				}
-
 			break;
 
 
@@ -245,8 +248,9 @@
 						document.getElementById("gagne").style.display = "block";
 				}else{
 						labyrinthe[y][x] = "Thésée";
-						let laby = document.getElementById("labyrinthe");
-						laby.style.transform = 'rotate('+90+'deg)';
+						rotation = rotation + 90;
+						
+						laby.style.transform = 'rotate('+(rotation)+'deg)';
 
 				}
 			break;	
@@ -257,7 +261,9 @@
 
 		let laDiv = (y)*(labyrinthe[1].length)+(x+1);
 		let leChangement = document.querySelector("div:nth-child("+laDiv+")");
-		leChangement.style.backgroundColor = "blue";
+		leChangement.style.backgroundColor = "#228DFF";
+		eChangement.style.transition = "none";
+
 
 	}
 
@@ -265,12 +271,9 @@
 
 		let laDiv = (y)*(labyrinthe[1].length)+(x+1);
 		let leChangement = document.querySelector("div:nth-child("+laDiv+")")
-		leChangement.style.backgroundColor = "white";
+		leChangement.style.backgroundColor = "#ffffff";
+		leChangement.style.transition = "background-color 500ms linear"
 	}
-
-
-
-
 
 
 
