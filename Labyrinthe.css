@@ -1,5 +1,5 @@
 
-
+html { overflow-y: hidden; } 
 
 
 body {
@@ -9,14 +9,30 @@ body {
 	width: 100%;
 }
 
-
 h1{
+	display : block;
+	text-transform: uppercase;
+	color: #FF1177;
+  	font-family: 'Audiowide', cursive;
+	text-align:center;
+	font-size:6em;
+	position: absolute;
+	left : 22%;
+}
+
+
+#gagne{
 	font-family: 'Iceland';
 	text-transform: uppercase;
-	  text-align:center;
-	  font-size:100px;
-	  margin:20px 0 20px 0;
-	  color:#fff;
+	text-align:center;
+	font-size:100px;
+	margin:20px 0 20px 0;
+	color:#fff;
+	position : absolute;
+	left : 32%;
+	top : 50%;
+	display : none;
+
 
 	  /*Animation*/
 	  animation: neonAnimation 1.5s ease-in-out infinite alternate;   
@@ -50,20 +66,17 @@ h1{
 
 
 #casepleine {
-	
-	background-color: #222222;
-  	background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+	background-color: transparent;
+ 
 }
 
 
 #casevide{
-
 	background-color: #fff;
 
 }
 
 .case {
-	
 	display: inline-block;
 	text-align: center;
 	margin: 0;
@@ -74,20 +87,20 @@ h1{
 	/*width : 240px;*/
 	line-height: 0;
 	position: absolute;
-	top: 20%; left: 27%;
-
--webkit-animation: cssAnimation 10.5533s 16 linear;
-
+	top: 30%; left: 26%;
+	transition: all 1s ease-in-out;
 }
-@-webkit-keyframes cssAnimation {
-from { -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px); }
+
+
+/*@-webkit-keyframes cssAnimation {
+from { -webkit-transform: rotate(90deg) scale(1) skew(1deg) translate(10px); }
 to { -webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
-}
+}*/
 
 
 
 #arrive{
-	background-color: #FF0000;
+	background-color: #228DFF;
 }
 
 #depart{
@@ -96,4 +109,9 @@ to { -webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
 
 #Thésée{
 	background-color: #00FF
+}
+
+
+	 
+
 }

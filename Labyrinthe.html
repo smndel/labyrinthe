@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="Labyrinthe.css">
         <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Iceland" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     </head>
     
@@ -16,7 +18,7 @@
 
 <div id=labyrinthe></div>
 
-
+<div id="gagne">TU ES<br>VAINQUEUR</div>
     
     <script>
 
@@ -36,8 +38,8 @@
 		// ];
 
 		let labyrinthe =
-		[["depart",1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-		["Thésée",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+		[[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+		[1,"Thésée",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
 		[1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1],
 		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1],
 		[1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,0,1],
@@ -78,7 +80,7 @@
 		[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]]
 
 
-		let x = 0;
+		let x = 1;
 		let y = 1;
 
 	function creerLaby(tablaby){
@@ -167,14 +169,21 @@
 
 			case 37 : //left
 				if (labyrinthe[y][x-1] == 0){
-					
+
 						labyrinthe[y][x-1] = "Thésée";
 						labyrinthe[y][x] = 0;
 						trouverEtPeindreLaDivPassage(x,y);
 						x--;
 						trouverEtPeindreLaDivJoueur(x,y);	
+				
+				}else if (labyrinthe[y][x-1] == "arrive"){	
+						document.getElementById("gagne").style.display = "block";
+			
 				}else{	
-						labyrinthe[y][x]= "Thésée";	
+						labyrinthe[y][x]= "Thésée";
+						let laby = document.getElementById("labyrinthe");
+						laby.style.transform = 'rotate('+90+'deg)';
+	
 				}
 
 			break;
@@ -182,14 +191,21 @@
 			
 			case 38 : //up
 				if (labyrinthe[y-1][x] == 0){
-					
+
 						labyrinthe[y-1][x]  = "Thésée";
 						labyrinthe[y][x] = 0;
 						trouverEtPeindreLaDivPassage(x,y)
 						y--;
-						trouverEtPeindreLaDivJoueur(x,y);	
+						trouverEtPeindreLaDivJoueur(x,y);
+
+				}else if (labyrinthe[y-1][x] == "arrive"){
+						
+						document.getElementById("gagne").style.display = "block";
 				}else{	
-						labyrinthe[y][x] = "Thésée";	
+						labyrinthe[y][x] = "Thésée";
+						let laby = document.getElementById("labyrinthe");
+						laby.style.transform = 'rotate('+90+'deg)';
+
 				}
 			break;
 
@@ -202,9 +218,16 @@
 						trouverEtPeindreLaDivPassage(x,y)
 						x++;
 						trouverEtPeindreLaDivJoueur(x,y);
+				
+				}else if (labyrinthe[y][x+1] == "arrive"){	
+						document.getElementById("gagne").style.display = "block";
+				
 				}else{
-						labyrinthe[y][x]= "Thésée";	
+						labyrinthe[y][x]= "Thésée";
+						let laby = document.getElementById("labyrinthe");
+						laby.style.transform = 'rotate('+90+'deg)';
 				}
+
 			break;
 
 
@@ -217,28 +240,32 @@
 						trouverEtPeindreLaDivPassage(x,y)
 						y++;
 						trouverEtPeindreLaDivJoueur(x,y);
-
+				}else if (labyrinthe[y+1][x] == "arrive"){
+						
+						document.getElementById("gagne").style.display = "block";
 				}else{
 						labyrinthe[y][x] = "Thésée";
+						let laby = document.getElementById("labyrinthe");
+						laby.style.transform = 'rotate('+90+'deg)';
+
 				}
 			break;	
 		}
 	}
 		
-
 	function trouverEtPeindreLaDivJoueur(x,y){
 
 		let laDiv = (y)*(labyrinthe[1].length)+(x+1);
+		let leChangement = document.querySelector("div:nth-child("+laDiv+")");
+		leChangement.style.backgroundColor = "blue";
 
-		document.querySelector("div:nth-child("+laDiv+")").style.backgroundColor = "blue";
 	}
-
 
 	function trouverEtPeindreLaDivPassage(x,y){
 
 		let laDiv = (y)*(labyrinthe[1].length)+(x+1);
-
-		document.querySelector("div:nth-child("+laDiv+")").style.backgroundColor = "white";
+		let leChangement = document.querySelector("div:nth-child("+laDiv+")")
+		leChangement.style.backgroundColor = "white";
 	}
 
 
