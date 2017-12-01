@@ -1,0 +1,91 @@
+
+
+
+
+body {
+	
+	background-color: #222222;
+  	background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+	width: 100%;
+}
+
+
+h1{
+	font-family: 'Iceland';
+	text-transform: uppercase;
+	  text-align:center;
+	  font-size:70px;
+	  margin:20px 0 20px 0;
+	  color:#fff;
+
+	  /*Animation*/
+	  animation: neonAnimation 1.5s ease-in-out infinite alternate;   
+}
+
+      @keyframes neonAnimation {
+
+        from {
+          text-shadow: 0 0 10px #ffffff,
+                     0 0 20px  #ffffff,
+                     0 0 30px  #ffffff,
+                     0 0 40px  #228DFF,
+                     0 0 70px  #228DFF,
+                     0 0 80px  #228DFF,
+                     0 0 100px #228DFF,
+                     0 0 150px #228DFF;
+        }
+        to {
+          text-shadow: 0 0 5px #ffffff,
+                0 0 10px #ffffff,
+                0 0 15px #ffffff,
+                0 0 20px #228DFF,
+                0 0 35px #228DFF,
+                0 0 40px #228DFF,
+                0 0 50px #228DFF,
+                0 0 75px #228DFF;
+  		}
+
+	}
+
+
+
+#casepleine {
+	
+	background-color: #222222;
+  	background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+}
+
+
+#casevide{
+
+	background-color: #fff;
+
+}
+
+.case {
+	
+	display: inline-block;
+	text-align: center;
+	margin: 0;
+  	padding: 0;
+}
+
+#labyrinthe{
+	/*width : 240px;*/
+	line-height: 0;
+	position: absolute;
+	top: 20%; left: 27%;
+
+}
+
+#arrive{
+	background-color: #FF0000;
+}
+
+#depart{
+	background-color: #00FF00;
+}
+
+#Thésée{
+	background-color: #00FF
+}
