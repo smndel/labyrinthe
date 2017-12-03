@@ -179,6 +179,7 @@
 						trouverEtPeindreLaDivJoueur(x,y);	
 				
 				}else if (labyrinthe[y][x-1] == "arrive"){	
+					
 						document.getElementById("gagne").style.display = "block";
 			
 				}else{	
@@ -223,6 +224,7 @@
 						trouverEtPeindreLaDivJoueur(x,y);
 				
 				}else if (labyrinthe[y][x+1] == "arrive"){	
+
 						document.getElementById("gagne").style.display = "block";
 				
 				}else{
@@ -243,6 +245,7 @@
 						trouverEtPeindreLaDivPassage(x,y)
 						y++;
 						trouverEtPeindreLaDivJoueur(x,y);
+
 				}else if (labyrinthe[y+1][x] == "arrive"){
 						
 						document.getElementById("gagne").style.display = "block";
