@@ -179,7 +179,7 @@
 						trouverEtPeindreLaDivJoueur(x,y);	
 				
 				}else if (labyrinthe[y][x-1] == "arrive"){	
-					
+
 						document.getElementById("gagne").style.display = "block";
 			
 				}else{	
@@ -259,6 +259,7 @@
 			break;	
 		}
 	}
+	
 		
 	function trouverEtPeindreLaDivJoueur(x,y){
 
@@ -266,9 +267,8 @@
 		let leChangement = document.querySelector("div:nth-child("+laDiv+")");
 		leChangement.style.backgroundColor = "#228DFF";
 		eChangement.style.transition = "none";
-
-
 	}
+
 
 	function trouverEtPeindreLaDivPassage(x,y){
 
